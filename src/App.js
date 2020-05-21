@@ -12,7 +12,7 @@ function App() {
   const [full_name] = React.useState("");
   const [first_name, setFirstName] = React.useState("");
   const [last_name, setLastName] = React.useState("");
-  const [date_of_birth, setDOB] = React.useState(new Date());
+  const [date_of_birth, setDOB] = React.useState("");
   const [response, setResponse] = React.useState({});
   const [status, setStatus] = React.useState("init");
 
