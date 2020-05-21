@@ -163,8 +163,11 @@ function App() {
   const handleSubmit = async () => {
     const data = {
       id,
-      full_name,
-      date_of_birth: moment(date_of_birth).format("YYYY-MM-DD"),
+      first_name,
+      last_name,
+      date_of_birth: date_of_birth
+        ? moment(date_of_birth).format("YYYY-MM-DD")
+        : "",
       // picture: "string",
     };
     console.log(data);
@@ -185,10 +188,10 @@ function App() {
       setStatus("loaded");
     } catch (err) {
       console.error(err);
+      setStatus("loaded");
       const { data } = await err.response;
       console.log(data);
       setResponse(data);
-      setStatus("loaded");
     }
   };
 
@@ -228,6 +231,7 @@ function App() {
             <select
               name="licenseType"
               id="licenseType"
+              s
               onChange={(e) => setLicenseType(e.target.value)}
             >
               <option value="">Select...</option>
